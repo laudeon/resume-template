@@ -1,4 +1,3 @@
-
 const App = (function(myModule) {
   /**
    * @private
