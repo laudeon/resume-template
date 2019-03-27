@@ -1,0 +1,326 @@
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
+html {
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  background-color: white;
+  color: #414141;
+  font-size: 1rem;
+  font-family: sans-serif;
+  padding: 0;
+}
+
+a {
+  color: #0bceaf;
+  text-decoration: none;
+}
+
+.green {
+  color: #0bceaf
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.flex-container > * {
+  flex-grow: 1;
+}
+
+.progress-bar {
+  height: 8px;
+  background-color: #dddddd;
+  border-radius: 4px;
+}
+.progress-bar-fill {
+  height: 8px;
+  background-color: #0bceaf;
+  border-radius: 4px;
+}
+
+/* NAV */
+nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 8rem;
+  padding-top: 1rem;
+  transition: .2s;
+  background: none;
+  z-index: 100;
+}
+nav.fixed {
+  height: 5rem;
+  padding-top: .2rem;
+  background-color: #ffffff;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}
+nav ul {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  list-style: none;
+  line-height: 5rem;
+  text-align: center;
+}
+nav ul li {
+  display: inline-block;
+  margin-right: 2rem;
+  transition: .4s;
+}
+nav ul li a {
+  display: block;
+  position: relative;
+  color: #414141;
+  font-size: 1.2rem;
+  font-weight: 700;
+  outline: none;
+  transition: .2s;
+}
+nav ul li a::after {
+  content: '';
+  position: absolute;
+  bottom: 1.2rem;
+  left: 0;
+  right: 0;
+  width: 0;
+  height: 1px;
+  margin: 0 auto;
+  background-color: #0bceaf;
+  transition: .2s;
+}
+nav ul li a:hover::after {
+  width: 40%;
+}
+nav ul li a:hover {
+  color: #000000;
+}
+nav ul li a.active {
+  color: #000000;
+}
+nav ul li a.active::after {
+  width: 40%;
+}
+
+/* HEADER */
+
+header {
+  min-height: 100vh;
+  margin: 0 auto 0 auto;
+  padding: 15rem 10% 0 10%;
+  position: relative;
+}
+header:after {
+  content : "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url(../images/office.jpg) no-repeat center center;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  opacity : 0.1;
+  z-index: -1;
+}
+header p.hello {
+  background: #0bceaf;
+  width: 120px;
+  padding: 1rem .8rem;
+  border-radius: 10px 10px 10px 0;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 900;
+}
+header h1 {
+  font-size: 3.5rem;
+  font-weight: 900;
+  line-height: 2.5rem;
+}
+header h1 small {
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+header ul.rs {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  text-align: center;
+}
+header ul.rs li {
+  display: inline-block;
+  margin-right: 3rem;
+}
+header ul.rs li a {
+  color: #414141;
+  transition: .2s;
+}
+header ul.rs li a:hover {
+  color: #0bceaf;
+}
+
+header section.avatar {
+  text-align: center;
+}
+header section.avatar img {
+  height: 300px;
+  border-radius: 100%;
+  border: 8px solid rgba(200, 200, 200, .5);
+  box-shadow: 0 0 0 10px rgba(210, 210, 210, .3)
+}
+
+/* MAIN SECTIONS */
+section#aboutme, 
+section#skills, 
+section#experience, 
+section#education {
+  padding: 0 10% 6rem 10%;
+  text-align: center;
+}
+
+body > main > section > h1 {
+  display: inline-block;
+  position: relative;
+  margin-bottom: 4rem;
+  margin-top: 8rem;
+}
+body > main > section > h1::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  width: 1rem;
+  height: 1rem;
+  bottom: .5rem;
+  left: -2rem;
+  background-color: #eeeeee;
+  border-radius: 100%;
+}
+body > main > section > h2 {
+  margin-top: 6rem;
+  margin-bottom: 4rem;
+  text-align: center;
+}
+body > main > section p {
+  line-height: 1.8rem;
+  text-align: left;
+}
+body > main > section article {
+  width: 30%;
+  margin: 0 1rem 1rem 1rem;
+  padding: 2.5rem 1.5rem 1.5rem 1.5rem;
+  background-color: #ffffff;
+  box-shadow: 0 5px 20px rgba(100, 100, 100, .15);
+  transition: .4s;
+  text-align: left;
+  border-radius: .5rem;
+}
+body > main > section article:hover {
+  box-shadow: 0 5px 20px rgba(100, 100, 100, .25);
+}
+body > main > section article h1 {
+  margin-top: 2rem;
+  text-align: left;
+  font-size: 1.6rem;
+}
+
+section#aboutme section#whatido article .fa-rocket {
+  color: #3ca0e4 !important;
+}
+section#aboutme section#whatido article .fa-code {
+  color: #0bceaf !important;
+}
+section#aboutme section#whatido article .fa-tablet-alt {
+  color: #a181fa !important;
+}
+section#aboutme button.cv {
+  margin: 2rem 0;
+  background-color: #0bceaf;
+  color: #ffffff;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 2rem;
+  outline: none;
+  transition: .4s;
+}
+section#aboutme button.cv:hover {
+  cursor: pointer;
+  box-shadow: 0 5px 10px rgba(100, 100, 100, .25);
+}
+
+
+section#skills h2 {
+  margin: 1rem 0 2rem 0;
+}
+section#skills .flex-container section {
+  margin: 2rem 2rem;
+  width: 15%;
+}
+
+
+section#experience { position: relative; }
+section#experience::after {
+  content : "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url(../images/worker.jpg) no-repeat center center;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  opacity : 0.1;
+  z-index: -1;
+}
+section#experience article h1 {
+  margin-top: 0;
+}
+section#experience article h1 small {
+  font-weight: 300;
+  font-size: .9rem;
+}
+
+footer {
+  padding-top: 8rem;
+  text-align: center;
+}
+footer .fa-envelope, 
+footer .fa-map-marker-alt, 
+footer .fa-phone {
+  color: #0bceaf;
+}
+footer section {
+  padding: 2rem 10% 2rem 10%;
+}
+footer h1 {
+  margin: 0 10% 2rem 10%;
+  position: relative;
+  display: inline-block;
+}
+footer h1::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  width: 1rem;
+  height: 1rem;
+  bottom: .5rem;
+  left: -2rem;
+  background-color: #eeeeee;
+  border-radius: 100%;
+}
+footer p.credit {
+  margin-top: 10rem;
+  margin-bottom: 0;
+  height: 10rem;
+  background-color: #f2f2f2f2;
+  line-height: 10rem;
+  color: #666666;
+  font-size: .8rem;
+}
